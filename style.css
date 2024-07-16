@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+:root{
+    --bgColor: #333;
+    --textPrimary: #fff;
+    --textSecondary: #666;
+    --primaryColor: #fd4;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color:var(--bgColor);
+    color: var(--textPrimary);
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    background: linear-gradient(135deg, #153e77, #4e085f);
+}
+main{
+    width: 600px;
+    margin: 50px auto;
+}
+h1{
+    color: var(--primaryColor);
+}
+
+h1 svg{
+    width: 40px;
+    fill: var(--primaryColor);
+}
+#header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 6px 30px;
+}
+#buttons{
+    text-align: right;
+}
+#info{
+    color: var(--primaryColor);
+}
+button{
+    background: rgba(255,255,255,.2);
+    border:0;
+    color: rgba(255,255,255,.5);
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#game{
+    position: relative;
+    right: 20px;
+/* 
+    flex-wrap: nowrap;
+    box-shadow: 2px 2px 20px #ff00ff;
+    background-color: #231212;
+    color: white;
+    border: 1px solid #ff00ff; */
+}
+div#game{
+    line-height:35px;
+    height:105px;
+    overflow: hidden;
+    position: relative;
+}
+div#game:focus{
+    outline:0;
+}
+#words{
+    filter: blur(5px);
+    color: var(--textSecondary);
+}
+#game:focus #words{
+    filter: blur(0);
+}
+#focus-error {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    padding-top: 35px;
+}
+#game:focus #focus-error{
+    display:none;
+}
+div.word{
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0 5px;
+}
+.letter.correct{
+    color: #fff;
+}
+.letter.incorrect{
+    color: #f55;
+}
+@keyframes blink{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#cursor{
+    display:none;
+    width: 2px;
+    height: 1.6rem;
+    background: var(--primaryColor);
+    position: fixed;
+    top: 198px;
+    left: 18px;
+    animation: blink .3s infinite;
+}
+#game:focus #cursor{
+    display: block;
+}
+#game.over #words{
+    opacity: .5;
+    filter: blur(0px);
+}
+#game.over:focus #cursor{
+    display:none;
+}
+#game.over #focus-error {
+    display: none;
+}
+
+#newGameBtn {
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    right: 500px;
+    color: golden;
+    text-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.8), 
+        0 0 15px rgba(255, 215, 0, 0.6), 
+        0 0 20px rgba(255, 215, 0, 0.4);
+    animation: timer 1.5s infinite alternate; /* Added alternate for smoother effect */
+    transition: transform 0.2s;
+
+}
+
+#newGameBtn:hover {
+    transform: scale(1.1); 
+
+} 
+#newGameBtn:active{
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+    transition: background-color 0.2;
+} 
+
+
+.score{
+    position: relative;
+    left: 200px;
+    display: inline-flex;
+    padding: 7px;
+    justify-content: flex-end;
+    border-radius: 5px;
+    border: 2px solid wheat;
+    border: none;
+    box-shadow: 5px 5px 10px #474343,0px 0px 10px #FFF;
+    font-size: 20px;
+    outline: none;
+    
+}
+.shiny-text {
+    font-size: 48px;
+    color: gold;
+    text-shadow: 
+        0 0 5px rgba(255, 215, 0, 0.7), 
+        0 0 10px rgba(255, 215, 0, 0.5), 
+        0 0 15px rgba(255, 215, 0, 0.3);
+    animation: shine 1.5s infinite;
+    margin-top: 20px;
+}
+
+@keyframes shine {
+    0% {
+        text-shadow: 
+            0 0 5px rgba(255, 215, 0, 0.7), 
+            0 0 10px rgba(255, 215, 0, 0.5), 
+            0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 
+            0 0 10px rgb(228, 204, 65), 
+            0 0 20px rgba(255, 215, 0, 0.8), 
+            0 0 30px rgba(255, 215, 0, 0.5);
+    }
+    100% {
+        text-shadow: 
+            0 0 5px rgba(255, 215, 0, 0.7), 
+            0 0 10px rgba(255, 215, 0, 0.5), 
+            0 0 15px rgba(255, 215, 0, 0.3);
+    }
+}
+
+.icon{
+    font-family: 'Roboto', sans-serif;
+    font-size: 100px; /* Increased size */
+
+    font-size: 50px;
+    text-shadow: 
+        0 0 8px rgba(255, 215, 0, 0.8), 
+        0 0 15px rgba(255, 215, 0, 0.6), 
+        0 0 20px rgba(255, 215, 0, 0.4);
+    animation: timer 1.5s infinite alternate; /* Added alternate for smoother effect */
+    transition: transform 0.2s; /* Added scale effect on hover */
+    transform: scale(1.5);
+}
+
+.icon:hover {
+    transform: scale(2); /* Slightly enlarge on hover */
+}
+
+.call {
+    background-color: #fd4;
+    font-size: 400PX;
+    position: absolute;
+    left: 6000px;
+    top: 500PX;
+}
+#button {
+    border-radius: 0;
+}
+button{
+    border: none;
+    box-shadow: 5px 5px 10px #474343,0px 0px 10px #FFF;
+    font-size: 20px;
+    outline: none;
+    border-radius: 20%;
+}
+footer {
+    margin-top: 0px;
+    color: #EEEEEE;
+    display: flex;  
+    justify-content: space-around;
+    position: relative;
+    left: 0px;
+    text-align: right;
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+  }
+.keyboard {
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+
+    right: 150px;
+}
+
+.row {
+    margin: 5px 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4535C1;
+    /* background-color: #007bff; */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.key:hover {
+    background-color: #0056b3;
+}
+
+.key:active {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+} 
+.pressed{
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+}
+
+
+.tab {
+    width: 90px;
+}
+
+.backspace {
+    width: 103px;
+   
+}
+.other {
+    width: 54px;
+}
+.enter {
+    width: 114px;
+}
+
+.caps {
+    width: 100px;
+}
+
+.shift {
+    width: 138px;
+}
+
+.space {
+    width: 460px
+}
+
+.ctrl {
+    width: 76px;
+}
+/* .key.pressed {
+    background-color: #0056b3;
+} */
+

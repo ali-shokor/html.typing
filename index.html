@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <title>HippoType</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .shiny-text{
+            font-family: 'Itim', cursive;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1 class="shiny-text">
+            <svg class="icon" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 9C8.55228 9 9 8.55228 9 8C9 7.44772 8.55228 7 8 7C7.44772 7 7 7.44772 7 8C7 8.55228 7.44772 9 8 9Z"fill="currentColor"/><path  d="M9 15C8.44772 15 8 15.4477 8 16C8 16.5523 8.44772 17 9 17H15C15.5523 17 16 16.5523 16 16C16 15.4477 15.5523 15 15 15H9Z"  fill="currentColor"/><path  d="M9 12C9 12.5523 8.55228 13 8 13C7.44772 13 7 12.5523 7 12C7 11.4477 7.44772 11 8 11C8.55228 11 9 11.4477 9 12Z"  fill="currentColor"/><path  d="M12 9C12.5523 9 13 8.55228 13 8C13 7.44772 12.5523 7 12 7C11.4477 7 11 7.44772 11 8C11 8.55228 11.4477 9 12 9Z"  fill="currentColor"/><path  d="M13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12Z"  fill="currentColor"/><path  d="M16 9C16.5523 9 17 8.55228 17 8C17 7.44772 16.5523 7 16 7C15.4477 7 15 7.44772 15 8C15 8.55228 15.4477 9 16 9Z"  fill="currentColor"/><path  d="M17 12C17 12.5523 16.5523 13 16 13C15.4477 13 15 12.5523 15 12C15 11.4477 15.4477 11 16 11C16.5523 11 17 11.4477 17 12Z"  fill="currentColor"/><path  fill-rule="evenodd"  clip-rule="evenodd"  d="M3 6C3 4.34315 4.34315 3 6 3H18C19.6569 3 21 4.34315 21 6V18C21 19.6569 19.6569 21 18 21H6C4.34315 21 3 19.6569 3 18V6ZM6 5H18C18.5523 5 19 5.44772 19 6V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18V6C5 5.44772 5.44772 5 6 5Z"fill="currentColor"/></svg>          Typing Test
+        </h1>
+        <div id="header">
+            <div id="info"></div>
+            <div id="buttons">
+                <button id="newGameBtn" style="border-radius: 0;">New game</button>
+                <span  id="bestscore" class="score">Best Score: 0wpm</span>
+            </div>
+        </div>
+        
+        <div id="game" tabindex="0">
+            <div id="words"></div>
+            <div id="cursor"></div>
+            <div id="focus-error">Click here to focus or press double Tab</div>
+        </div>
+        
+        <div id="keyboard" class="keyboard">
+            <!-- Numbers Row -->
+            <div class="row one">
+                <button class="key">`</button>
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="key">0</button>
+                <button class="key">-</button>
+                <button class="key">=</button>
+                <button class="key backspace">Backspace</button>
+            </div>
+
+            <!-- Tab Row -->
+            <div class="row two">
+                <button class="key tab">Tab</button>
+                <button class="key">Q</button>
+                <button class="key">W</button>
+                <button class="key">E</button>
+                <button class="key">R</button>
+                <button class="key">T</button>
+                <button class="key">Y</button>
+                <button class="key">U</button>
+                <button class="key">I</button>
+                <button class="key">O</button>
+                <button class="key">P</button>
+                <button class="key other">[</button>
+                <button class="key other">]</button>
+                <button class="key other">\</button>
+            </div>
+
+            <!-- Caps Lock Row -->
+            <div class="row three">
+                <button class="key caps">Caps</button>
+                <button class="key">A</button>
+                <button class="key">S</button>
+                <button class="key">D</button>
+                <button class="key">F</button>
+                <button class="key">G</button>
+                <button class="key">H</button>
+                <button class="key">J</button>
+                <button class="key">K</button>
+                <button class="key">L</button>
+                <button class="key">;</button>
+                <button class="key">'</button>
+                <button class="key enter">Enter</button>
+            </div>
+
+            <!-- Shift Row -->
+            <div class="row four">
+                <button class="key shift">Shift</button>
+                <button class="key">Z</button>
+                <button class="key">X</button>
+                <button class="key">C</button>
+                <button class="key">V</button>
+                <button class="key">B</button>
+                <button class="key">N</button>
+                <button class="key">M</button>
+                <button class="key">,</button>
+                <button class="key">.</button>
+                <button class="key">/</button>
+                <button class="key shift">Shift</button>
+            </div>
+
+            <!-- Ctrl Row -->
+            <div class="row five">
+                <button class="key ctrl">Ctrl</button>
+                <button class="key other">Win</button>
+                <button class="key other">Alt</button>
+                <button class="key space">Space</button>
+                <button class="key other">Alt</button>
+                <button class="key other">Win</button>
+                <button class="key ctrl">Ctrl</button>
+            </div>
+        </div>
+    </div>
+    <footer style="font-family: 'Indie Flower', cursive;">
+        www 🎲 Ali Shokor 🎲 com
+            <svg class=".call" width="40" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12C22 10.6868 21.7413 9.38647 21.2388 8.1731C20.7362 6.95996 19.9997 5.85742 19.0711 4.92896C18.1425 4.00024 17.0401 3.26367 15.8268 2.76123C14.6136 2.25854 13.3132 2 12 2V4C13.0506 4 14.0909 4.20703 15.0615 4.60889C16.0321 5.01099 16.914 5.60034 17.6569 6.34326C18.3997 7.08594 18.989 7.96802 19.391 8.93848C19.7931 9.90918 20 10.9495 20 12H22Z" fill="currentColor" /><path d="M2 10V5C2 4.44775 2.44772 4 3 4H8C8.55228 4 9 4.44775 9 5V9C9 9.55225 8.55228 10 8 10H6C6 14.4182 9.58173 18 14 18V16C14 15.4478 14.4477 15 15 15H19C19.5523 15 20 15.4478 20 16V21C20 21.5522 19.5523 22 19 22H14C7.37259 22 2 16.6274 2 10Z" fill="currentColor" /><path d="M17.5433 9.70386C17.8448 10.4319 18 11.2122 18 12H16.2C16.2 11.4485 16.0914 10.9023 15.8803 10.3928C15.6692 9.88306 15.3599 9.42017 14.9698 9.03027C14.5798 8.64014 14.1169 8.33081 13.6073 8.11963C13.0977 7.90869 12.5515 7.80005 12 7.80005V6C12.7879 6 13.5681 6.15527 14.2961 6.45679C15.024 6.7583 15.6855 7.2002 16.2426 7.75732C16.7998 8.31445 17.2418 8.97583 17.5433 9.70386Z" fill="currentColor" /></svg>
+    :+961 78/957/416
+        </footer>
+    </main>
+    <script src="typing.js"></script>
+</body>
+</html>
