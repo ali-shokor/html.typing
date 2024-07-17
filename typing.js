@@ -5,6 +5,10 @@ window.timer = null;
 window.gameStart = null;
 window.pauseTime = 0;
 
+document.getElementById('newGameBtn').addEventListener('click', () => {
+  location.reload();
+});
+
 document.addEventListener("keydown", function(event) {
   makeSound();
   keyAnimation(event.key);
@@ -16,9 +20,6 @@ function makeSound() {
   audio.play();
 }
 
-document.getElementById('newGameBtn').addEventListener('click', () => {
-  location.reload();
-});
 
 function keyAnimation(key) {
   document.querySelectorAll(".key").forEach(button => {
@@ -62,7 +63,7 @@ function newGame() {
   document.querySelector("#bestscore").innerHTML = "Best Score: " + getBestScore(); // Display the best score
   
   // Show the focus message
-  // const focusMessage = document.getElementById('focus-error');
+  // const focusMessage = document.getElementById('focusMessage');
   // focusMessage.style.display = 'block';
   // focusMessage.addEventListener('click', () => {
   //   focusMessage.style.display = 'none';
@@ -205,7 +206,7 @@ function handleTyping(key) {
       }
     }
   }
-
+  // cursor following the current letter
   if (currentWord.getBoundingClientRect().top > 250) {
     const words = document.getElementById('words');
     const margin = parseInt(words.style.marginTop || '0px');
@@ -224,11 +225,11 @@ document.getElementById('newGameBtn').addEventListener('click', () => {
 });
 
 function setBestScore(score) {
-  localStorage.setItem("bestScore0", score);
+  localStorage.setItem("bestScore5", score);
 }
 
 function getBestScore() {
-  return localStorage.getItem("bestScore0") ? parseInt(localStorage.getItem("bestScore0")) : 0; // Default to 0 if no score is found
+  return localStorage.getItem("bestScore5") ? parseInt(localStorage.getItem("bestScore5")) : 0; // Default to 0 if no score is found
 }
 
 function updateBestScore(currentScore) {
