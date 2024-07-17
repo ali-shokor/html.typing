@@ -88,8 +88,8 @@ function gameOver() {
   clearInterval(window.timer);
   addClass(document.getElementById('game'), 'over');
   const result = getWpm();
-  document.getElementById('info').innerHTML = `WPM: ${result.toFixed(2)}`;
-  updateBestScore(result.toFixed(2));
+  document.getElementById('info').innerHTML = `WPM: ${result}`;
+  updateBestScore(result);
 }
 
 function handleTyping(key) {
