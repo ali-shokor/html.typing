@@ -62,12 +62,12 @@ function newGame() {
   document.querySelector("#bestscore").innerHTML = "Best Score: " + getBestScore(); // Display the best score
   
   // Show the focus message
-  const focusMessage = document.getElementById('focus-error');
-  focusMessage.style.display = 'block';
-  focusMessage.addEventListener('click', () => {
-    focusMessage.style.display = 'none';
-    document.getElementById('game').focus();
-  });
+  // const focusMessage = document.getElementById('focus-error');
+  // focusMessage.style.display = 'block';
+  // focusMessage.addEventListener('click', () => {
+  //   focusMessage.style.display = 'none';
+  //   document.getElementById('game').focus();
+  // });
 }
 
 function getWpm() {
