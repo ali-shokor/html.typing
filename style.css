@@ -5,16 +5,19 @@
     --textSecondary: #666;
     --primaryColor: #fd4;
 }
-body{
+html, body {
+    margin: 0; /* Remove any default margin that browsers might add */
+    height: 100%; /* Ensure both html and body elements fill the viewport */
+}
+
+body {
     font-family: 'Roboto', sans-serif;
-    background-color:var(--bgColor);
-    color: var(--textPrimary);
-    font-size: 1.4rem;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
-    min-height: 100vh;
     background: linear-gradient(135deg, #153e77, #4e085f);
+    font-size: 1.4rem;
+    color: var(--textPrimary);
+    display: flex; /* Optional, centers content if added */
+    justify-content: center;
+    align-items: center;
 }
 main{
     width: 600px;
