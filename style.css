@@ -6,8 +6,8 @@
     --primaryColor: #fd4;
 }
 html, body {
-    margin: 0; /* Remove any default margin that browsers might add */
-    height: 100%; /* Ensure both html and body elements fill the viewport */
+    margin: 0;
+    height: 100%;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     background: linear-gradient(135deg, #153e77, #4e085f);
     font-size: 1.4rem;
     color: var(--textPrimary);
-    display: flex; /* Optional, centers content if added */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
